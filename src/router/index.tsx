@@ -7,10 +7,10 @@ import {
 import RootLayout from '../pages/Layout'
 import HomePage from '../pages'
 import LoginPage from '../pages/Login'
-import RegistratePage from '../pages/Registrate'
+import RegiserPage from '../pages/Regiser'
 import ProtectedRoute from '../auth/ProtectedRoute'
 
-const isLoggedIn = true
+const isLoggedIn = false
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,10 +35,10 @@ const router = createBrowserRouter(
         <Route
           element={
             <ProtectedRoute goto="/" isAllowed={!isLoggedIn}>
-              <RegistratePage />
+              <RegiserPage />
             </ProtectedRoute>
           }
-          path="registrate"
+          path="regiser"
         />
       </Route>
     </>
