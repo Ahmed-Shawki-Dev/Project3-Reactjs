@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid'
-import type { IRegisterInputsData, ITodo } from '../interfaces'
+import type { ILoginInputsData, IRegisterInputsData, ITodo } from '../interfaces'
 
 export const todos: ITodo[] = [
   {
@@ -18,47 +18,43 @@ export const todos: ITodo[] = [
   },
 ]
 
-export const Register_Input: IRegisterInputsData[] = [
+export const REGISTER_FORM: IRegisterInputsData[] = [
   {
     name: 'username',
     placeholder: 'Enter Username',
     type: 'text',
-    validation: {
-      required: 'Enter A Username',
-      minLength: {
-        value: 8,
-        message: 'Enter More Than 8 Chars',
-      },
-    },
   },
 
   {
     name: 'email',
     placeholder: 'Enter Email',
     type: 'text',
-    validation: {
-      required: 'Enter An Email',
-      pattern: {
-        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        message: 'Please Enter A Valid Email',
-      },
-    },
   },
 
   {
     name: 'password',
     placeholder: 'Enter Password',
     type: 'password',
-    validation: {
-      required: 'Enter A Password',
-      pattern: {
-        value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
-        message: 'Please Enter A Vaild Password',
-      },
-      minLength: {
-        value: 8,
-        message: 'Enter More Than 8 Chars',
-      },
-    },
   },
 ]
+
+
+
+
+
+
+export const LOGIN_FORM: ILoginInputsData[] = [
+  {
+    name: 'identifier',
+    placeholder: 'Enter Email',
+    type: 'text',
+  },
+
+  {
+    name: 'password',
+    placeholder: 'Enter Password',
+    type: 'password',
+  },
+]
+
+

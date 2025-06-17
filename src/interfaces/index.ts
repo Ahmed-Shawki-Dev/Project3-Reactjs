@@ -4,10 +4,16 @@ export interface ITodo {
 }
 
 export type TRegiserInputNames = 'username' | 'email' | 'password'
+export type TLoginInputNames = 'identifier' | 'password'
 
-export interface IFormInput {
+export interface IRegisterInput {
   username: string
   email: string
+  password: string
+}
+
+export interface ILoginInput {
+  identifier: string
   password: string
 }
 
@@ -16,7 +22,7 @@ export interface IRegisterInputsData {
   placeholder: string
   name: TRegiserInputNames
 
-  validation: {
+  validation?: {
     required?: string
     pattern?: {
       value: RegExp
@@ -26,5 +32,28 @@ export interface IRegisterInputsData {
       value: number
       message: string
     }
+  }
+}
+export interface ILoginInputsData {
+  type: string
+  placeholder: string
+  name: TLoginInputNames
+
+  validation?: {
+    required?: string
+    pattern?: {
+      value: RegExp
+      message: string
+    }
+    minLength?: {
+      value: number
+      message: string
+    }
+  }
+}
+
+export interface IAxiosErrorMessage {
+  error: {
+    message: string
   }
 }

@@ -7,7 +7,7 @@ import {
 import RootLayout from '../pages/Layout'
 import HomePage from '../pages'
 import LoginPage from '../pages/Login'
-import RegiserPage from '../pages/Regiser'
+import RegisterPage from '../pages/Register'
 import ProtectedRoute from '../auth/ProtectedRoute'
 
 const isLoggedIn = false
@@ -35,7 +35,7 @@ const router = createBrowserRouter(
         <Route
           element={
             <ProtectedRoute goto="/" isAllowed={!isLoggedIn}>
-              <RegiserPage />
+              <RegisterPage />
             </ProtectedRoute>
           }
           path="regiser"

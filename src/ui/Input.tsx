@@ -21,9 +21,12 @@ const Input = forwardRef(
         <input
           ref={ref}
           type={inputType}
+          autoComplete={isPassword ? 'new-password' : 'on'}
+          name={isPassword ? 'new-password' : rest.name}
           className={`border p-2 rounded-md shadow-md h-12 bg-white border-gray-400 w-full ${className}`}
           {...rest}
         />
+
         {isPassword && (
           <span
             className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer text-gray-600"
