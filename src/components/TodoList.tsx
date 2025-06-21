@@ -1,28 +1,20 @@
 import { type ITodo } from '../interfaces'
 import Button from '../ui/Button'
 
-interface TodoListProps extends ITodo {
-  index: number
-}
 
-const TodoList = ({ title, index }: TodoListProps) => {
-  const bgColor = index % 2 === 0 ? 'bg-white' : 'bg-gray-200'
-
+const TodoList = ({ title }: ITodo) => {
   return (
     <div
-      className={` min-h-25 h-fit flex items-center pl-4 2xl:px-4 py-5 justify-between w-full  ${bgColor}`}
+      className={`min-h-[100px] flex flex-col w-[90%] m-auto sm:flex-row items-center justify-between  px-4 py-4 rounded-xl shadow-md hover:shadow-lg transition bg-[#f9f9f9] space-y-3 sm:space-y-0 sm:w-[90%] sm:m-auto`}
     >
-      <p
-        className="break-words w-[50%] md:w-150 2xl:w-200 text-xl 
-"
-      >
+      <p className="break-words w-full sm:w-[60%] text-center sm:text-left text-lg font-semibold text-gray-800">
         {title}
       </p>
-      <div className="2xl:space-x-2 flex">
-        <Button className="bg-indigo-600 hover:bg-indigo-500 scale-75 2xl:scale-100">
+      <div className="flex space-x-3 w-full sm:w-auto justify-center sm:justify-end">
+        <Button className="bg-indigo-500 hover:bg-indigo-400 text-white px-3 py-2 rounded-md shadow transition text-sm">
           Edit
         </Button>
-        <Button className="bg-red-600 hover:bg-red-500 scale-75 2xl:scale-100">
+        <Button className="bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-md shadow transition text-sm">
           Delete
         </Button>
       </div>

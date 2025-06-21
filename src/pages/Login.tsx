@@ -21,29 +21,32 @@ const LoginPage = () => {
   } = useForm<ILoginInput>({
     resolver: yupResolver(loginSchema),
   })
-  console.log(errors)
   const onSubmit: SubmitHandler<ILoginInput> = async data => {
     setIsLoading(true)
-    console.log(data)
     let res
     try {
       res = await axiosInstance.post('/auth/local', data)
-      console.log(res)
+      const resData= res.data
+      console.log(res.data)
       toast.success('Logined Successfully', {
         position: 'bottom-center',
-        duration: 4000,
+        duration: 1500,
         style: {
           backgroundColor: 'black',
           color: 'white',
           width: 'fit-content',
         },
       })
+      localStorage.setItem("loggedInUser",JSON.stringify(resData))
+      setTimeout(() => {
+        location.replace('/')
+      }, 1500);
+
     } catch (error) {
-      console.log(error)
       const errorObj = error as AxiosError<IAxiosErrorMessage>
       toast.error(`${errorObj?.response?.data?.error.message}`, {
         position: 'bottom-center',
-        duration: 4000,
+        duration: 1000,
         style: {
           backgroundColor: 'black',
           color: 'white',
@@ -70,7 +73,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-full flex justify-center items-center p-4 w-full">
       <form
-        className="flex flex-col bg-gray-300 p-8 rounded-xl shadow-lg w-full max-w-md space-y-6"
+        className="flex flex-col bg-transparent p-8 rounded-xl shadow-lg w-full max-w-md space-y-6"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h3 className="text-2xl text-center">Login Page</h3>
@@ -79,7 +82,7 @@ const LoginPage = () => {
           <Button
             isLoading={isLoading}
             width="w-full"
-            className="bg-black hover:bg-gray-950 flex items-center justify-center disabled:bg-gray-950"
+            className="bg-indigo-500 hover:bg-indigo-400 flex items-center justify-center disabled:bg-gray-950"
           >
             {isLoading ? (
               <span className="animate-spin rounded-full h-6 w-6 border-4 border-white border-t-transparent "></span>

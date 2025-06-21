@@ -16,6 +16,10 @@ export const todos: ITodo[] = [
     id: uuid(),
     title: 'Third Todo',
   },
+  {
+    id: uuid(),
+    title: 'Fourth Todo',
+  },
 ]
 
 export const REGISTER_FORM: IRegisterInputsData[] = [
@@ -57,4 +61,11 @@ export const LOGIN_FORM: ILoginInputsData[] = [
   },
 ]
 
+
+
+export const navItems = [
+  { path: '/', label: 'Home' },
+  { path: '/regiser', label: 'Register' },
+  { path: '/login', label: 'Login' },
+]
 

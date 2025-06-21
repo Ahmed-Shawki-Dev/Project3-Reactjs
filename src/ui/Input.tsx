@@ -23,7 +23,7 @@ const Input = forwardRef(
           type={inputType}
           autoComplete={isPassword ? 'new-password' : 'on'}
           name={isPassword ? 'new-password' : rest.name}
-          className={`border p-2 rounded-md shadow-md h-12 bg-white border-gray-400 w-full ${className}`}
+          className={`border p-2 rounded-md shadow-md h-12 bg-white border-gray-400 w-full focus:border-indigo-500 focus:outline focus:outline-indigo-500 ${className}`}
           {...rest}
         />
 

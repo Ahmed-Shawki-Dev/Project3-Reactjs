@@ -4,21 +4,24 @@ import {
   Route,
 } from 'react-router-dom'
 
-import RootLayout from '../pages/Layout'
+import ProtectedRoute from '../auth/ProtectedRoute'
 import HomePage from '../pages'
+import RootLayout from '../pages/Layout'
 import LoginPage from '../pages/Login'
 import RegisterPage from '../pages/Register'
-import ProtectedRoute from '../auth/ProtectedRoute'
+import ErrorHandler from '../errors/ErrorHandler'
 
-const isLoggedIn = false
+const getUser = localStorage.getItem('loggedInUser')
 
+const userData = getUser? JSON.parse(getUser) :null
+console.log(userData?.jwt)
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route element={<RootLayout />} path="/">
+      <Route element={<RootLayout />} path="/" errorElement={<ErrorHandler/>}>
         <Route
           element={
-            <ProtectedRoute goto="/login" isAllowed={isLoggedIn}>
+            <ProtectedRoute goto="/login" isAllowed={userData?.jwt}>
               <HomePage />
             </ProtectedRoute>
           }
@@ -26,7 +29,15 @@ const router = createBrowserRouter(
         />
         <Route
           element={
-            <ProtectedRoute goto="/" isAllowed={!isLoggedIn}>
+            <ProtectedRoute goto="/login" isAllowed={userData?.jwt}>
+              <h2>Profile Page</h2>
+            </ProtectedRoute>
+          }
+          path='profile'
+        />
+        <Route
+          element={
+            <ProtectedRoute goto="/" isAllowed={!userData?.jwt}>
               <LoginPage />
             </ProtectedRoute>
           }
@@ -34,7 +45,7 @@ const router = createBrowserRouter(
         />
         <Route
           element={
-            <ProtectedRoute goto="/" isAllowed={!isLoggedIn}>
+            <ProtectedRoute goto="/" isAllowed={!userData?.jwt}>
               <RegisterPage />
             </ProtectedRoute>
           }

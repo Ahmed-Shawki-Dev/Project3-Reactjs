@@ -1,3 +1,5 @@
+import type { AxiosRequestConfig } from "axios"
+
 export interface ITodo {
   id?: string | undefined
   title: string
@@ -57,3 +59,10 @@ export interface IAxiosErrorMessage {
     message: string
   }
 }
+
+export interface IAuthenticatedQuery {
+  queryKey: string[]
+  url: string
+  config?: AxiosRequestConfig
+}
+
