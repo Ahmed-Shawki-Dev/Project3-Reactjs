@@ -1,0 +1,184 @@
+@import 'tailwindcss' important;
+
+/* Professional Color System with Light & Dark Theme */
+:root {
+  /* Font and base */
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Color Palette - Light Theme */
+  --color-primary: #6366f1; /* Indigo-500 */
+  --color-primary-hover: #4f46e5; /* Indigo-600 */
+  --color-secondary: #f59e42;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f5f9;
+  --color-text: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-border: #e2e8f0;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-warning: #facc15;
+  --color-disabled: #cbd5e1;
+  --color-gray: #6b7280; /* Gray-500 */
+  --color-gray-hover: #4b5563; /* Gray-600 */
+}
+
+[data-theme='dark'] {
+  --color-primary: #818cf8; /* Indigo-400 */
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-secondary: #fbbf24;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-alt: #334155;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-border: #334155;
+  --color-error: #f87171;
+  --color-success: #4ade80;
+  --color-warning: #fde68a;
+  --color-disabled: #475569;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100%;
+}
+
+body,
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Responsive font sizing */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Utility classes for backgrounds, borders, etc. */
+.bg-surface {
+  background: var(--color-surface);
+}
+.bg-surface-alt {
+  background: var(--color-surface-alt);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-error {
+  color: var(--color-error);
+}
+.text-success {
+  color: var(--color-success);
+}
+.border {
+  border: 1px solid var(--color-border);
+}
+
+/* Scrollbar styling for modern look */
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+/* Button background utilities */
+.bg-primary {
+  background: var(--color-primary) !important;
+}
+.bg-primary-hover:hover {
+  background: var(--color-primary-hover) !important;
+}
+.bg-secondary {
+  background: var(--color-secondary) !important;
+}
+.bg-secondary-hover:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-secondary) 90%,
+    black 10%
+  ) !important;
+}
+.bg-error {
+  background: var(--color-error) !important;
+}
+.bg-error-hover:hover {
+  background: color-mix(in srgb, var(--color-error) 80%, black 20%) !important;
+}
+.bg-success {
+  background: var(--color-success) !important;
+}
+.bg-success-hover:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-success) 80%,
+    black 20%
+  ) !important;
+}
+.bg-warning {
+  background: var(--color-warning) !important;
+}
+.bg-warning-hover:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-warning) 80%,
+    black 20%
+  ) !important;
+}
+.bg-gray {
+  background: var(--color-gray) !important;
+}
+.bg-gray-hover:hover {
+  background: var(--color-gray-hover) !important;
+}
+
+/* Button text color utilities */
+.text-on-primary {
+  color: #fff !important;
+}
+.text-on-secondary {
+  color: #fff !important;
+}
+.text-on-error {
+  color: #fff !important;
+}
+.text-on-success {
+  color: #fff !important;
+}
+.text-on-warning {
+  color: #fff !important;
+}
+.text-on-gray {
+  color: #fff !important;
+}
