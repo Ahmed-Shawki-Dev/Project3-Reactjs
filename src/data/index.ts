@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import type { ILoginInputsData, IRegisterInputsData } from '../interfaces'
-=======
 import { v4 as uuid } from 'uuid'
 import type { ILoginInputsData, IRegisterInputsData, ITodo } from '../interfaces'
 
@@ -24,7 +21,6 @@ export const todos: ITodo[] = [
     title: 'Fourth Todo',
   },
 ]
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
 export const REGISTER_FORM: IRegisterInputsData[] = [
   {
@@ -46,14 +42,11 @@ export const REGISTER_FORM: IRegisterInputsData[] = [
   },
 ]
 
-<<<<<<< HEAD
-=======
 
 
 
 
 
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 export const LOGIN_FORM: ILoginInputsData[] = [
   {
     name: 'identifier',
@@ -68,17 +61,11 @@ export const LOGIN_FORM: ILoginInputsData[] = [
   },
 ]
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 export const navItems = [
   { path: '/', label: 'Home' },
   { path: '/regiser', label: 'Register' },
   { path: '/login', label: 'Login' },
 ]
-<<<<<<< HEAD
-=======
 
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee

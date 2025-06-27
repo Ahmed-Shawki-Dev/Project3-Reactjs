@@ -1,15 +1,13 @@
 import { MoveLeft, MoveRight } from 'lucide-react'
-import Button from './Button'
 
 interface IProps {
   page: number
   pageCount: number
-  total: number
+  total:number
   onClickPrev: () => void
   onClickNext: () => void
   onClickEnd: () => void
   onClickStart: () => void
-  onClickSpecificPage: (p:number) => void
 }
 
 const Paginator = ({
@@ -19,17 +17,8 @@ const Paginator = ({
   onClickPrev,
   onClickNext,
   onClickStart,
-  onClickEnd,
-  onClickSpecificPage
+  onClickEnd
 }: IProps) => {
- const pages = Array.from({ length: pageCount },(_,i)=>i+1);
-
-const pagesButton = pages.map(pg => (
-  <Button key={pg} onClick={() => onClickSpecificPage(pg)}>
-    {pg}
-  </Button>
-))
-
   return (
     <div className="flex justify-center flex-col items-center space-x-2">
       <p>
@@ -55,7 +44,6 @@ const pagesButton = pages.map(pg => (
           <MoveLeft />
           Previous
         </button>
-        {pagesButton}
         <button
           type="button"
           className="bg-black text-white hover:bg-gray-900 flex p-2 justify-center items-center rounded-2xl cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-500 "

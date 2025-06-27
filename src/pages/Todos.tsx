@@ -14,7 +14,7 @@ const TodosPage = () => {
   // Fetch Todos with React Query
   const { data, isLoading } = useAuthenticatedQuery({
     queryKey: ['todospagination',`${page}`],
-    url: `/todos?pagination[pageSize]=30&pagination[page]=${page}`,
+    url: `/todos?pagination[pageSize]=50&pagination[page]=${page}`,
     config: {
       headers: { Authorization: `Bearer ${userData.jwt}` },
     },
@@ -40,10 +40,6 @@ const TodosPage = () => {
   const onClickStart = () => {
     setPage(1)
     scroll(0, 0)
-  }
-
-  const onClickSpecificPage = (p:number)=>{
-   setPage(p)
   }
 
   if (isLoading) {
@@ -78,7 +74,6 @@ console.log(data)
           onClickNext={onClickNext}
           onClickEnd={onClickEnd}
           onClickStart={onClickStart}
-          onClickSpecificPage={onClickSpecificPage}
         />
       </div>
     </div>

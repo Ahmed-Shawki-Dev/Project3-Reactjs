@@ -33,7 +33,6 @@ export const EditSchema = (todo: ITodo) => {
 
   return errors
 }
-<<<<<<< HEAD
 export const AddSchema = (todo: ITodo) => {
   const errors: { title: string; description: string } = {
     title: '',
@@ -55,5 +54,3 @@ export const AddSchema = (todo: ITodo) => {
 
   return errors
 }
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee

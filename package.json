@@ -32,10 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-<<<<<<< HEAD
     "@faker-js/faker": "^9.8.0",
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",

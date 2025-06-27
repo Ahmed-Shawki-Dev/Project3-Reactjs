@@ -3,7 +3,6 @@ import type { AxiosError } from 'axios'
 import { useState } from 'react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'
 import InputErrorMessage from '../components/InputErrorMessage'
 import Button from '../components/ui/Button'
@@ -13,17 +12,6 @@ import { REGISTER_FORM } from '../data'
 import useTitle from '../hooks/useTitle'
 import type { IAxiosErrorMessage, IRegisterInput } from '../interfaces'
 import { registerSchema } from '../validation'
-=======
-import InputErrorMessage from '../components/InputErrorMessage'
-import axiosInstance from '../config/axios.config'
-import { REGISTER_FORM } from '../data'
-import type { IAxiosErrorMessage, IRegisterInput } from '../interfaces'
-import Button from '../ui/Button'
-import Input from '../ui/Input'
-import { registerSchema } from '../validation'
-import { useNavigate } from 'react-router-dom'
-import useTitle from '../hooks/useTitle'
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
 const RegisterPage = () => {
   useTitle('Register Page')

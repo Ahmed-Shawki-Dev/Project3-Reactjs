@@ -1,17 +1,9 @@
 import { type ITodo } from '../interfaces'
-<<<<<<< HEAD
 import Button from './ui/Button'
 
 interface IProps extends ITodo {
   openEditModal?: () => void
   openDeleteModal?: () => void
-=======
-import Button from '../ui/Button'
-
-interface IProps extends ITodo {
-  openEditModal: () => void
-  openDeleteModal: () => void
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 }
 
 const TodoList = ({

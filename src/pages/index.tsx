@@ -1,33 +1,19 @@
-<<<<<<< HEAD
 import { faker } from '@faker-js/faker'
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 import { useQueryClient } from '@tanstack/react-query'
 import { CircleX } from 'lucide-react'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 import InputErrorMessage from '../components/InputErrorMessage'
 import SkeletonTodo, { EmptyTodos } from '../components/SkeletonTodo'
 import TodoList from '../components/TodoList'
-<<<<<<< HEAD
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
 import Modal from '../components/ui/Modal'
 import Textarea from '../components/ui/Textarea'
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 import axiosInstance from '../config/axios.config'
 import useAuthenticatedQuery from '../hooks/useAuthenticatedQuery'
 import useTitle from '../hooks/useTitle'
 import type { ITodo } from '../interfaces'
-<<<<<<< HEAD
 import { AddSchema, EditSchema } from '../validation'
-=======
-import Button from '../ui/Button'
-import Input from '../ui/Input'
-import Modal from '../ui/Modal'
-import Textarea from '../ui/Textarea'
-import { EditSchema } from '../validation'
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
 const HomePage = () => {
   useTitle('Home Page')
@@ -40,19 +26,15 @@ const HomePage = () => {
     description: '',
     documentId: '',
   })
-<<<<<<< HEAD
   const [addError, setAddError] = useState<ITodo>({
     title: '',
     description: '',
   })
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
   const [todoForEdit, setTodoForEdit] = useState<ITodo>({
     documentId: '',
     title: '',
     description: '',
   })
-<<<<<<< HEAD
   const [todoForAdd, setTodoForAdd] = useState({
     title: '',
     description: '',
@@ -61,15 +43,6 @@ const HomePage = () => {
   const [isOpenEditModal, setIsOpenEditModal] = useState(false)
   const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false)
   const [isOpenAddModal, setIsOpenAddModal] = useState(false)
-=======
-  const [todoForDelete, setTodoForDelete] = useState<ITodo>({
-    documentId: '',
-    title: '',
-    description: '',
-  })
-  const [isOpenEditModal, setIsOpenEditModal] = useState(false)
-  const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false)
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
   // Get User Data
   const getUser = localStorage.getItem('loggedInUser')
@@ -83,7 +56,6 @@ const HomePage = () => {
       headers: { Authorization: `Bearer ${userData.jwt}` },
     },
   })
-<<<<<<< HEAD
   console.log(data)
 
   // Handlers
@@ -96,10 +68,6 @@ const HomePage = () => {
     setIsOpenAddModal(false)
     return isOpenAddModal
   }
-=======
-
-  // Handlers
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
   const openEditModal = (todo: ITodo) => {
     setTodoForEdit(todo)
     setIsOpenEditModal(true)
@@ -111,13 +79,8 @@ const HomePage = () => {
     return isOpenEditModal
   }
 
-<<<<<<< HEAD
   const openDeleteModal = (documentId: string) => {
     setTodoForDelete(documentId)
-=======
-  const openDeleteModal = (todo: ITodo) => {
-    setTodoForDelete(todo)
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
     setIsOpenDeleteModal(true)
   }
 
@@ -126,7 +89,6 @@ const HomePage = () => {
     return isOpenDeleteModal
   }
 
-<<<<<<< HEAD
   const submitAddHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const addValidation = AddSchema(todoForAdd)
@@ -182,9 +144,6 @@ const HomePage = () => {
   }
 
   const submitEditHandler = async (e: FormEvent<HTMLFormElement>) => {
-=======
-  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
     e.preventDefault()
     setIsUpdating(true)
     const editValidation = EditSchema(todoForEdit)
@@ -197,10 +156,6 @@ const HomePage = () => {
       setIsUpdating(false)
       return
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
     await axiosInstance
       .put(
         `/todos/${todoForEdit.documentId}`,
@@ -226,11 +181,7 @@ const HomePage = () => {
 
   const deleteTodo = async () => {
     await axiosInstance
-<<<<<<< HEAD
       .delete(`/todos/${todoForDelete}`, {
-=======
-      .delete(`/todos/${todoForDelete.documentId}`, {
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
         headers: { Authorization: `Bearer ${userData.jwt}` },
       })
       .then(() => {
@@ -252,16 +203,11 @@ const HomePage = () => {
       </div>
     )
   }
-<<<<<<< HEAD
   console.log(data.todos.reverse())
-=======
-
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
   // Render Component
   return (
     <div className="w-full min-h-full flex-col flex justify-start items-center pt-20 bg-surface-alt text-text">
       <div className="w-full 2xl:w-[60%] flex flex-col items-start space-y-6">
-<<<<<<< HEAD
         <div className="flex justify-center w-full space-x-4">
           <Button onClick={() => openAddModal()}>Add A New Todo </Button>
           <Button
@@ -271,8 +217,6 @@ const HomePage = () => {
             Generate Todos
           </Button>
         </div>
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
         {data.todos.length ? (
           data.todos.map(({ title, description, documentId }: ITodo) => (
             <div key={documentId} className="w-full space-y-2">
@@ -282,13 +226,7 @@ const HomePage = () => {
                 openEditModal={() =>
                   openEditModal({ title, description, documentId })
                 }
-<<<<<<< HEAD
                 openDeleteModal={() => openDeleteModal(documentId || '')}
-=======
-                openDeleteModal={() =>
-                  openDeleteModal({ title, description, documentId })
-                }
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
               />
             </div>
           ))
@@ -296,7 +234,6 @@ const HomePage = () => {
           <EmptyTodos />
         )}
 
-<<<<<<< HEAD
         {/* Add Modal */}
         <Modal isOpen={isOpenAddModal} close={closeAddModal} title="Add Todo">
           <form onSubmit={submitAddHandler} className="space-y-6">
@@ -362,19 +299,13 @@ const HomePage = () => {
           </form>
         </Modal>
 
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
         {/* Edit Modal */}
         <Modal
           isOpen={isOpenEditModal}
           close={closeEditModal}
           title="Edit Todo"
         >
-<<<<<<< HEAD
           <form onSubmit={submitEditHandler} className="space-y-6">
-=======
-          <form onSubmit={submitHandler} className="space-y-6">
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
             {/* Title Field */}
             <div>
               <label className="block text-sm font-medium text-text mb-1">
@@ -382,11 +313,7 @@ const HomePage = () => {
               </label>
               <Input
                 placeholder="Enter a catchy title..."
-<<<<<<< HEAD
                 value={todoForEdit.title || ''}
-=======
-                value={todoForEdit.title}
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   setTodoForEdit(prev => ({ ...prev, title: e.target.value }))
                   setEditError({ title: '' })
@@ -403,11 +330,7 @@ const HomePage = () => {
               </label>
               <Textarea
                 placeholder="Enter a useful description..."
-<<<<<<< HEAD
                 value={todoForEdit.description || ''}
-=======
-                value={todoForEdit.description}
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                   setTodoForEdit(prev => ({
                     ...prev,

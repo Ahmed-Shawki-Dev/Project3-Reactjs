@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-<<<<<<< HEAD
 import Button from '../components/ui/Button'
-=======
-import Button from '../ui/Button'
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
 interface UserData {
   username: string

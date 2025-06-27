@@ -1,10 +1,7 @@
 import type { AxiosRequestConfig } from "axios"
 
 export interface ITodo {
-<<<<<<< HEAD
   id?:number
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
   documentId?: string 
   title: string
   description?: string

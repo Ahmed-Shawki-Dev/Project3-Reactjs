@@ -66,7 +66,6 @@ const Navbar = () => {
         {userData ? (
           <div className="flex items-center space-x-4">
             <NavLink
-<<<<<<< HEAD
               to="/todos"
               className={({ isActive }) =>
                 isActive
@@ -77,8 +76,6 @@ const Navbar = () => {
               Todos
             </NavLink>
             <NavLink
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
               to="/profile"
               className={({ isActive }) =>
                 isActive
@@ -88,10 +85,7 @@ const Navbar = () => {
             >
               Profile
             </NavLink>
-<<<<<<< HEAD
 
-=======
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
             <span
               onClick={handleLogout}
               className="cursor-pointer text-error hover:text-error/80 font-semibold transition"

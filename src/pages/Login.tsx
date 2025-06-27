@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import InputErrorMessage from '../components/InputErrorMessage'
-<<<<<<< HEAD
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
 import axiosInstance from '../config/axios.config'
@@ -12,15 +11,6 @@ import { LOGIN_FORM } from '../data'
 import useTitle from '../hooks/useTitle'
 import type { IAxiosErrorMessage, ILoginInput } from '../interfaces'
 import { loginSchema } from '../validation'
-=======
-import axiosInstance from '../config/axios.config'
-import { LOGIN_FORM } from '../data'
-import type { IAxiosErrorMessage, ILoginInput } from '../interfaces'
-import Button from '../ui/Button'
-import Input from '../ui/Input'
-import { loginSchema } from '../validation'
-import useTitle from '../hooks/useTitle'
->>>>>>> 4f159f7275c4f460cba007b7cfc90366eac4ddee
 
 const LoginPage = () => {
   useTitle('Login Page')
